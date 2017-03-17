@@ -12,7 +12,7 @@ var hoxisora = {
     width: {},
     height: {},
     //star
-    star_count: 100,
+    star_count: 50,
     star_maxR: 2.2,
     star_speed: 200,
     stars: [],
@@ -32,7 +32,6 @@ var hoxisora = {
 
         if (/iphone/i.test(navigator.userAgent)) {
             me.meteor_speed = 5;
-            alert(me.meteor_speed)
         }
         //anime loop
         me.loop();
@@ -46,6 +45,7 @@ var hoxisora = {
             a.r = Math.floor(Math.random() * me.star_maxR);
             a.speed = Math.floor(me.star_speed + me.star_speed * Math.random());
             me.stars.push(a);
+            console.log(a.x, a.y, a.speed)
         }
     },
     new_meteor: function () {
