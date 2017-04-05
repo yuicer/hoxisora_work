@@ -12,13 +12,14 @@ var hoxisora = {
     width: {},
     height: {},
     //star
-    star_count: 50,
+    star_count: 0,
     star_maxR: 2.2,
     star_speed: 200,
     stars: [],
     //meteor
     meteors: [],
     meteor_speed: 2,
+    meteor_probability: 1,
     time: new Date(),
     init: function () {
         var me = this;
@@ -66,7 +67,7 @@ var hoxisora = {
 
         // 随机触发流星
         let i = Math.random();
-        if (i > 0.99) {
+        if (i > me.meteor_probability) {
             me.new_meteor();
         }
 
